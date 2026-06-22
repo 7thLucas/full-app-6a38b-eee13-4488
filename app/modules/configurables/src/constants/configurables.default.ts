@@ -128,7 +128,7 @@ export const defaultConfigurablesData: TDefaultConfigurableData = {
   },
   // ── XOGame ──────────────────────────────────────────────────────────
   gameTitle: "XOGame",
-  gameSubtitle: "Classic 3x3 Tic Tac Toe",
+  gameSubtitle: "Classic 5x5 Tic Tac Toe",
   playerXLabel: "Player X",
   playerOLabel: "Player O",
   resetButtonLabel: "New Game",

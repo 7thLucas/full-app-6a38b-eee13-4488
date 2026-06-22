@@ -3,29 +3,33 @@ import { useConfigurables } from "~/modules/configurables";
 
 type Player = "X" | "O";
 type Cell = Player | null;
-type Board = [Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell];
+type Board = Cell[];
 
-const WINNING_LINES: [number, number, number][] = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6],
+const WINNING_LINES: [number, number, number, number, number][] = [
+  [0, 1, 2, 3, 4],
+  [5, 6, 7, 8, 9],
+  [10, 11, 12, 13, 14],
+  [15, 16, 17, 18, 19],
+  [20, 21, 22, 23, 24],
+  [0, 5, 10, 15, 20],
+  [1, 6, 11, 16, 21],
+  [2, 7, 12, 17, 22],
+  [3, 8, 13, 18, 23],
+  [4, 9, 14, 19, 24],
+  [0, 6, 12, 18, 24],
+  [4, 8, 12, 16, 20],
 ];
 
-function calculateWinner(board: Board): { winner: Player; line: number[] } | null {
-  for (const [a, b, c] of WINNING_LINES) {
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      return { winner: board[a] as Player, line: [a, b, c] };
+function calculateWinner(board: Cell[]): { winner: Player; line: number[] } | null {
+  for (const [a, b, c, d, e] of WINNING_LINES) {
+    if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d] && board[a] === board[e]) {
+      return { winner: board[a] as Player, line: [a, b, c, d, e] };
     }
   }
   return null;
 }
 
-function isDraw(board: Board): boolean {
+function isDraw(board: Cell[]): boolean {
   return board.every((cell) => cell !== null);
 }
 
@@ -38,11 +42,7 @@ interface ScoreState {
 export function TicTacToe() {
   const { config, loading } = useConfigurables();
 
-  const [board, setBoard] = useState<Board>([
-    null, null, null,
-    null, null, null,
-    null, null, null,
-  ]);
+  const [board, setBoard] = useState<Board>(Array(25).fill(null) as Cell[]);
   const [currentPlayer, setCurrentPlayer] = useState<Player>("X");
   const [scores, setScores] = useState<ScoreState>({ X: 0, O: 0, draws: 0 });
   const [gameOver, setGameOver] = useState(false);
@@ -52,7 +52,7 @@ export function TicTacToe() {
   const winningLine = winnerResult?.line ?? [];
 
   const gameTitle = config?.gameTitle ?? "XOGame";
-  const gameSubtitle = config?.gameSubtitle ?? "Classic 3x3 Tic Tac Toe";
+  const gameSubtitle = config?.gameSubtitle ?? "Classic 5x5 Tic Tac Toe";
   const playerXLabel = config?.playerXLabel ?? "Player X";
   const playerOLabel = config?.playerOLabel ?? "Player O";
   const resetButtonLabel = config?.resetButtonLabel ?? "New Game";
@@ -62,7 +62,7 @@ export function TicTacToe() {
     (index: number) => {
       if (board[index] || winnerResult || draw) return;
 
-      const newBoard = [...board] as Board;
+      const newBoard = [...board] as Cell[];
       newBoard[index] = currentPlayer;
       setBoard(newBoard);
 
@@ -83,7 +83,7 @@ export function TicTacToe() {
   );
 
   const handleReset = useCallback(() => {
-    setBoard([null, null, null, null, null, null, null, null, null]);
+    setBoard(Array(25).fill(null) as Cell[]);
     setCurrentPlayer("X");
     setGameOver(false);
   }, []);
@@ -159,7 +159,7 @@ export function TicTacToe() {
 
       {/* Game board */}
       <div className="bg-card rounded-2xl shadow-lg border border-border p-4 sm:p-6 mb-6">
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        <div className="grid grid-cols-5 gap-2 sm:gap-3">
           {board.map((cell, index) => {
             const isWinningCell = winningLine.includes(index);
             return (
@@ -168,9 +168,9 @@ export function TicTacToe() {
                 onClick={() => handleCellClick(index)}
                 disabled={!!cell || !!winnerResult || draw}
                 className={`
-                  w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32
+                  w-14 h-14 sm:w-16 sm:h-16
                   flex items-center justify-center
-                  rounded-xl border-2 text-5xl sm:text-6xl font-bold
+                  rounded-xl border-2 text-2xl sm:text-3xl font-bold
                   transition-all duration-150
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
                   ${
