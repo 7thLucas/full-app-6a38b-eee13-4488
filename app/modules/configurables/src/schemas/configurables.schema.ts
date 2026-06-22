@@ -99,6 +99,50 @@ export const configurableSchemas: ConfigurableSchemas = {
       ],
     },
 
+    // ── XOGame ──────────────────────────────────────────────────────────────
+    {
+      fieldName: "gameTitle",
+      type: "string",
+      required: true,
+      label: "Game Title",
+      minLength: 1,
+      maxLength: 50,
+    },
+    {
+      fieldName: "gameSubtitle",
+      type: "string",
+      required: false,
+      label: "Game Subtitle",
+      maxLength: 120,
+    },
+    {
+      fieldName: "playerXLabel",
+      type: "string",
+      required: true,
+      label: "Player X Label",
+      maxLength: 30,
+    },
+    {
+      fieldName: "playerOLabel",
+      type: "string",
+      required: true,
+      label: "Player O Label",
+      maxLength: 30,
+    },
+    {
+      fieldName: "resetButtonLabel",
+      type: "string",
+      required: true,
+      label: "Reset Button Label",
+      maxLength: 30,
+    },
+    {
+      fieldName: "showScoreboard",
+      type: "boolean",
+      required: false,
+      label: "Show Scoreboard",
+    },
+
     {
       fieldName: "font",
       type: "object",

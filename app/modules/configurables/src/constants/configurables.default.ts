@@ -64,67 +64,73 @@ export type TDefaultConfigurableData = {
   logoUrl: string;
   brandColor: TBrandColor;
   font: TFont;
-  // Mirror new schema fields here. Example:
-  //   maxItemsPerPage?: number;
-  //   enableNotifications?: boolean;
-  //   featuredCategories?: string[];
+  gameTitle: string;
+  gameSubtitle: string;
+  playerXLabel: string;
+  playerOLabel: string;
+  resetButtonLabel: string;
+  showScoreboard: boolean;
 };
 
 export const defaultConfigurablesData: TDefaultConfigurableData = {
-  appName: "My App",
+  appName: "XOGame",
   logoUrl: "",
   brandColor: {
     // Base
-    background:        "#ffffff",
-    foreground:        "#09090b",
+    background:        "#FFFFFF",
+    foreground:        "#0F172A",
     // Card
-    card:              "#ffffff",
-    cardForeground:    "#09090b",
+    card:              "#FFFFFF",
+    cardForeground:    "#0F172A",
     // Popover
-    popover:           "#ffffff",
-    popoverForeground: "#09090b",
+    popover:           "#FFFFFF",
+    popoverForeground: "#0F172A",
     // Primary
-    primary:           "#2563eb",
-    primaryForeground: "#ffffff",
+    primary:           "#1D4ED8",
+    primaryForeground: "#FFFFFF",
     // Secondary
-    secondary:           "#f4f4f5",
-    secondaryForeground: "#18181b",
+    secondary:           "#F1F5F9",
+    secondaryForeground: "#0F172A",
     // Muted
-    muted:           "#f4f4f5",
-    mutedForeground: "#71717a",
+    muted:           "#F8FAFC",
+    mutedForeground: "#64748B",
     // Accent
-    accent:           "#f4f4f5",
-    accentForeground: "#18181b",
+    accent:           "#DBEAFE",
+    accentForeground: "#1E40AF",
     // Destructive
-    destructive:           "#ef4444",
-    destructiveForeground: "#fafafa",
+    destructive:           "#EF4444",
+    destructiveForeground: "#FFFFFF",
     // Border / Input / Ring
-    border: "#e4e4e7",
-    input:  "#e4e4e7",
-    ring:   "#2563eb",
+    border: "#E2E8F0",
+    input:  "#E2E8F0",
+    ring:   "#1D4ED8",
     // Charts
-    chart1: "#f97316",
-    chart2: "#0d9488",
-    chart3: "#1e3a5f",
-    chart4: "#d4a017",
-    chart5: "#ea580c",
+    chart1: "#1D4ED8",
+    chart2: "#DBEAFE",
+    chart3: "#1E40AF",
+    chart4: "#64748B",
+    chart5: "#EF4444",
     // Navbar
-    navbarBackground: "#ffffff",
+    navbarBackground: "#FFFFFF",
     // Sidebar
-    sidebarBackground:        "#fafafa",
-    sidebarForeground:        "#3f3f46",
-    sidebarPrimary:           "#2563eb",
-    sidebarPrimaryForeground: "#ffffff",
-    sidebarAccent:            "#f4f4f5",
-    sidebarAccentForeground:  "#18181b",
-    sidebarBorder:            "#e4e4e7",
-    sidebarRing:              "#2563eb",
+    sidebarBackground:        "#F8FAFC",
+    sidebarForeground:        "#0F172A",
+    sidebarPrimary:           "#1D4ED8",
+    sidebarPrimaryForeground: "#FFFFFF",
+    sidebarAccent:            "#DBEAFE",
+    sidebarAccentForeground:  "#1E40AF",
+    sidebarBorder:            "#E2E8F0",
+    sidebarRing:              "#1D4ED8",
   },
   font: {
-    headingFont: "Plus Jakarta Sans",
+    headingFont: "Space Grotesk",
     textFont: "Inter",
   },
-  // ─────────────────────────────────────────────────────────────────────
-  // Add new field defaults here. See RULES.md §5 for per-type shape.
-  // ─────────────────────────────────────────────────────────────────────
+  // ── XOGame ──────────────────────────────────────────────────────────
+  gameTitle: "XOGame",
+  gameSubtitle: "Classic 3x3 Tic Tac Toe",
+  playerXLabel: "Player X",
+  playerOLabel: "Player O",
+  resetButtonLabel: "New Game",
+  showScoreboard: true,
 };
