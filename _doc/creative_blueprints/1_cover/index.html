@@ -1,0 +1,49 @@
+<style>
+  .mode-landscape .sl-layout { flex-direction: row; }
+  .mode-portrait .sl-layout { flex-direction: column; }
+  .mode-landscape .sl-visual { width: 45%; }
+  .mode-portrait .sl-visual { width: 100%; height: 40%; }
+  .mode-landscape .sl-content { width: 55%; }
+  .mode-portrait .sl-content { width: 100%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: Content -->
+    <div class="sl-content flex flex-col justify-between p-12">
+      <div>
+        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-6">
+          Classic · Casual · Instant
+        </span>
+        <h1 class="text-6xl font-black text-slate-900 leading-tight mb-4">
+          Play.<br>Win.<br>Repeat.
+        </h1>
+        <p class="text-xl text-slate-500 font-light max-w-xs leading-relaxed">
+          A clean, zero-friction 3×3 tic tac toe game — open your browser, start playing. No accounts, no installs, no waiting.
+        </p>
+      </div>
+
+      <div class="mt-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">X</span>
+          <span class="text-slate-400 text-sm">vs</span>
+          <span class="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center text-slate-800 font-bold text-sm">O</span>
+          <span class="text-slate-500 text-sm ml-1">Two players · Same device</span>
+        </div>
+        <data-attribution />
+      </div>
+    </div>
+
+    <!-- Right: Visual -->
+    <div class="sl-visual relative flex items-center justify-center bg-slate-50 overflow-hidden">
+      <img
+        src="https://api-stag.qb-deck.quantumbyte.ai/common/image-generation?prompt=clean%20minimal%20tic%20tac%20toe%20game%20board%20with%20X%20and%20O%20marks%2C%20flat%20design%2C%20playful%2C%20indigo%20and%20amber%20color%20palette%2C%20white%20background%2C%20soft%20shadows"
+        alt="Tic Tac Toe game board"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-l from-transparent to-slate-50 opacity-30"></div>
+    </div>
+
+  </div>
+</section>
