@@ -13,8 +13,10 @@ Minimal and instant. Opens in a browser, works immediately, looks clean. No ads,
 - 3×3 interactive game board
 - Turn-based two-player gameplay (X vs O, same device)
 - Win detection (row, column, diagonal) and draw detection
+- Draw detection when board is full
 - Game reset / play again button
 - Current player indicator
+- Session scoreboard (X wins / draws / O wins) — toggleable via settings
 
 ## Brand & Tone
 Casual, playful, clean. Simple color palette. No unnecessary decoration.
