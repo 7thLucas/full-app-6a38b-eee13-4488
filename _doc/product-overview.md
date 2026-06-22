@@ -10,7 +10,7 @@ Anyone who wants a quick casual game — kids, friends, coworkers killing time.
 Minimal and instant. Opens in a browser, works immediately, looks clean. No ads, no sign-up, no bloat.
 
 ## Core Feature
-- 3×3 interactive game board
+- 5×5 interactive game board
 - Turn-based two-player gameplay (X vs O, same device)
 - Win detection (row, column, diagonal) and draw detection
 - Draw detection when board is full
