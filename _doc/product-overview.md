@@ -1,4 +1,4 @@
-# Product Overview — Tic Tac Toe
+# Product Overview — XOGame
 
 ## What it is
 A simple, browser-based 3×3 tic tac toe game. Two players take turns marking X and O on a 3×3 grid. First to get three in a row wins. No accounts, no installs, no friction.
